@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application
+	xmlns:mx="http://www.adobe.com/2006/mxml"
+	xmlns:filters="flash.filters.*"
+	xmlns:rs="com.rubenswieringa.book.*"
+	layout="absolute" 
+	backgroundColor="#333333" 
+	creationComplete="onCreationComplete()">
+	
+
+	
+	<mx:Script>
+		<![CDATA[
+			
+			import mx.effects.Fade;
+			import com.rubenswieringa.book.*;
+			
+
+			
+			private function onCreationComplete ():void {
+				myBook.addEventListener(BookEvent.PAGE_TORN, onPageTorn);
+			}
+			
+			private function onPageTorn (event:BookEvent):void {
+			}
+
+			
+		]]>
+	</mx:Script>
+	
+	
+	<!-- BOOK STARTS HERE -->
+	
+	<rs:Book id="myBook" x="{Math.round(Application.application.width/2-400)}" y="50" width="1000" height="600" 
+		openAt="0" autoFlipDuration="600" easing="0.7" regionSize="150"
+		sideFlip="true" hardCover="true" hover="true" snap="false" flipOnClick="true">
+		
+		
+		
+		<rs:Page><mx:Image source="@Embed('assets/halfs/cover.png')" /></rs:Page>
+		<rs:Page><mx:Image source="@Embed('assets/halfs/cover-inside.png')" /></rs:Page>
+
+		<rs:Page><mx:Image source="@Embed('assets/halfs/page1f.png')" /></rs:Page>
+		<rs:Page><mx:Image source="@Embed('assets/halfs/page1b.png')" /></rs:Page>
+
+		<rs:Page><mx:Image source="@Embed('assets/halfs/page2f.png')" /></rs:Page>
+		<rs:Page><mx:Image source="@Embed('assets/halfs/page2b.png')" /></rs:Page>
+
+		<rs:Page><mx:Image source="@Embed('assets/halfs/page3f.png')" /></rs:Page>
+		<rs:Page><mx:Image source="@Embed('assets/halfs/page3b.png')" /></rs:Page>
+		
+		<rs:Page><mx:Image source="@Embed('assets/halfs/page4f.png')" /></rs:Page>
+		<rs:Page><mx:Image source="@Embed('assets/halfs/page4b.png')" /></rs:Page>
+		
+		
+		<rs:Page><mx:Image source="@Embed('assets/halfs/back-inside.png')" /></rs:Page>
+		<rs:Page><mx:Image source="@Embed('assets/halfs/back.png')" /></rs:Page>
+
+		
+		
+	</rs:Book>
+	
+	<!-- BOOK ENDS HERE -->
+	
+	
+</mx:Application>
